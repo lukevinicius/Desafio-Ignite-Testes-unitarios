@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn ./src/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli",
-    "test": "jest --runInBand --detectOpenHandles"
+    "test:integration": "NODE_ENV=test jest --runInBand --testPathPattern=\"./src/modules/.*Controller.spec.ts\"",
+    "test:unit": "jest --testPathPattern=\"./src/modules/.*UseCase.spec.ts\""
   },
   "dependencies": {
     "@types/jest": "^27.4.0",
